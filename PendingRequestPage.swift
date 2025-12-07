@@ -10,6 +10,7 @@ import SwiftUI
 struct PendingRequestPage: View {
     let user: SearchUserResult
     let gender: String
+    @Binding var navigateBack: Bool
 
     @State private var isCancelling = false
     @State private var navigateBackToPrivate = false
@@ -77,18 +78,26 @@ struct PendingRequestPage: View {
 
                 Spacer()
 
-                // "Requested" button (bottom left) - tap to cancel
-                HStack {
+                // Buttons at bottom left
+                VStack(alignment: .leading, spacing: 15) {
+                    // "Requested" button - tap to cancel
                     GlassButton(title: isCancelling ? "cancelling..." : "requested") {
                         cancelFollowRequest()
                     }
                     .opacity(isCancelling ? 0.3 : 0.5)
                     .disabled(isCancelling)
-                    .padding(.leading, 30)
 
-                    Spacer()
+                    // "Back" button - goes back to explore/notifications page
+                    GlassButton(title: "back") {
+                        // Set navigateBack to false to go all the way back
+                        navigateBack = false
+                        // Also set navigateBackToPrivate to false to skip private profile page
+                        navigateBackToPrivate = false
+                    }
                 }
+                .padding(.leading, 30)
                 .padding(.bottom, 100)
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
     }
@@ -118,8 +127,8 @@ struct PendingRequestPage: View {
                 isCancelling = false
                 if let response = response, response.status == "success" {
                     print("✅ Follow request cancelled!")
-                    // Navigate back to private profile view
-                    navigateBackToPrivate = true
+                    // Navigate back to explore/notifications page
+                    navigateBack = false
                 } else {
                     print("❌ Failed to cancel follow request")
                 }
@@ -137,6 +146,7 @@ struct PendingRequestPage: View {
             university: nil,
             occupation: nil
         ),
-        gender: "woman"
+        gender: "woman",
+        navigateBack: .constant(true)
     )
 }

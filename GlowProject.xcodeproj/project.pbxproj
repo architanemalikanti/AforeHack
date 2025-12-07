@@ -10,7 +10,6 @@
 		892032C82EC53C4700A1BFCE /* GirlyGirl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892032C72EC53C4700A1BFCE /* GirlyGirl.swift */; };
 		892032CE2EC553DE00A1BFCE /* LeagueScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 892032CB2EC553DE00A1BFCE /* LeagueScript-Regular.ttf */; };
 		892032CF2EC553DE00A1BFCE /* (null) in Resources */ = {isa = PBXBuildFile; };
-		892032D22EC5736100A1BFCE /* Black.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892032D12EC5736100A1BFCE /* Black.swift */; };
 		892032D42EC685E900A1BFCE /* Future - Low Life (Lyrics) ft. The Weeknd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 892032D32EC685E900A1BFCE /* Future - Low Life (Lyrics) ft. The Weeknd.mp3 */; };
 		892CCF582ECD1F25000A06B7 /* PushEraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892CCF572ECD1F25000A06B7 /* PushEraView.swift */; };
 		892CCF5A2ECD24ED000A06B7 /* LiquidGlassContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892CCF592ECD24ED000A06B7 /* LiquidGlassContainer.swift */; };
@@ -26,6 +25,12 @@
 		892CCF762ED291EC000A06B7 /* VogueWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892CCF752ED291EC000A06B7 /* VogueWelcome.swift */; };
 		892CCF7C2ED296F6000A06B7 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892CCF7B2ED296F6000A06B7 /* MainTabView.swift */; };
 		892CCF7E2ED29741000A06B7 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892CCF7D2ED29741000A06B7 /* FeedView.swift */; };
+		892CCF802ED41628000A06B7 /* PostCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892CCF7F2ED41628000A06B7 /* PostCreationView.swift */; };
+		892CCF822ED43916000A06B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 892CCF812ED43916000A06B7 /* GoogleService-Info.plist */; };
+		892CCF852ED43BEC000A06B7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 892CCF842ED43BEC000A06B7 /* FirebaseAnalytics */; };
+		892CCF872ED43BEC000A06B7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 892CCF862ED43BEC000A06B7 /* FirebaseAuth */; };
+		892CCF892ED43BEC000A06B7 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 892CCF882ED43BEC000A06B7 /* FirebaseStorage */; };
+		892CCF8B2ED4494E000A06B7 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892CCF8A2ED4494E000A06B7 /* ImageUploader.swift */; };
 		89365DA12EADF8D600D79D18 /* CareFree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89365DA02EADF8D600D79D18 /* CareFree.swift */; };
 		8958F9D92E9203E600973662 /* GlowProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8958F9D82E9203E600973662 /* GlowProjectApp.swift */; };
 		8958F9DB2E9203E600973662 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8958F9DA2E9203E600973662 /* ContentView.swift */; };
@@ -126,6 +131,10 @@
 		8999451D2EAD9646008F768E /* TypingEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999451C2EAD9646008F768E /* TypingEffect.swift */; };
 		89DE31CB2EA0859A00FA5121 /* ChatbotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DE31CA2EA0859A00FA5121 /* ChatbotView.swift */; };
 		89DE31F22EA2F53400FA5121 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DE31F12EA2F53400FA5121 /* HapticManager.swift */; };
+		89E3AEA92ED80C92004B8554 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E3AEA82ED80C92004B8554 /* NotificationsView.swift */; };
+		89E3AED82EDAEA08004B8554 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E3AED72EDAEA08004B8554 /* FeedViewModel.swift */; };
+		89E3AEDA2EDAEAD2004B8554 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E3AED92EDAEAD2004B8554 /* CachedAsyncImage.swift */; };
+		89E3AEDC2EDAEAEC004B8554 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E3AEDB2EDAEAEC004B8554 /* ImageCache.swift */; };
 		89F2F38E2EC7F9E500831AB3 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		89F2F3902EC7F9EF00831AB3 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F2F38F2EC7F9EF00831AB3 /* ExploreView.swift */; };
 		89F2F39F2EC98C2700831AB3 /* LibreBodoni-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89F2F3912EC98C2700831AB3 /* LibreBodoni-Bold.ttf */; };
@@ -141,6 +150,10 @@
 		89F2F3A92EC98C2700831AB3 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 89F2F39C2EC98C2700831AB3 /* OFL.txt */; };
 		89F2F3AC2EC98CCA00831AB3 /* Vogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F2F3AB2EC98CCA00831AB3 /* Vogue.swift */; };
 		89F2F3AE2ECA600D00831AB3 /* PendingRequestPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F2F3AD2ECA600D00831AB3 /* PendingRequestPage.swift */; };
+		89F71D612ED66B7F00F97A29 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F71D602ED66B7F00F97A29 /* UserProfileView.swift */; };
+		89F71D632ED66B8F00F97A29 /* PostLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F71D622ED66B8F00F97A29 /* PostLayoutView.swift */; };
+		89F71D652ED66B9E00F97A29 /* PostCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F71D642ED66B9E00F97A29 /* PostCacheManager.swift */; };
+		89F71D672ED7C38D00F97A29 /* PrivateProfileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F71D662ED7C38D00F97A29 /* PrivateProfileHandler.swift */; };
 		F9627A849E0B4A7D9AF48C6B /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5A693BC8C94B4AA733DC17 /* AnalysisView.swift */; };
 /* End PBXBuildFile section */
 
@@ -148,7 +161,6 @@
 		1D5A693BC8C94B4AA733DC17 /* AnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisView.swift; sourceTree = "<group>"; };
 		892032C72EC53C4700A1BFCE /* GirlyGirl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GirlyGirl.swift; sourceTree = "<group>"; };
 		892032CB2EC553DE00A1BFCE /* LeagueScript-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LeagueScript-Regular.ttf"; sourceTree = "<group>"; };
-		892032D12EC5736100A1BFCE /* Black.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Black.swift; sourceTree = "<group>"; };
 		892032D32EC685E900A1BFCE /* Future - Low Life (Lyrics) ft. The Weeknd.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Future - Low Life (Lyrics) ft. The Weeknd.mp3"; sourceTree = "<group>"; };
 		892CCF572ECD1F25000A06B7 /* PushEraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushEraView.swift; sourceTree = "<group>"; };
 		892CCF592ECD24ED000A06B7 /* LiquidGlassContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidGlassContainer.swift; sourceTree = "<group>"; };
@@ -165,6 +177,9 @@
 		892CCF752ED291EC000A06B7 /* VogueWelcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VogueWelcome.swift; path = GlowProject/ProfilePages/VogueProfiles/VogueWelcome.swift; sourceTree = "<group>"; };
 		892CCF7B2ED296F6000A06B7 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabView.swift; path = GlowProject/MainTabView.swift; sourceTree = "<group>"; };
 		892CCF7D2ED29741000A06B7 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeedView.swift; path = GlowProject/FeedView.swift; sourceTree = "<group>"; };
+		892CCF7F2ED41628000A06B7 /* PostCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostCreationView.swift; path = GlowProject/PostCreationView.swift; sourceTree = "<group>"; };
+		892CCF812ED43916000A06B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		892CCF8A2ED4494E000A06B7 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageUploader.swift; path = GlowProject/ImageUploader.swift; sourceTree = "<group>"; };
 		89365DA02EADF8D600D79D18 /* CareFree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareFree.swift; sourceTree = "<group>"; };
 		8958F9D52E9203E600973662 /* GlowProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlowProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8958F9D82E9203E600973662 /* GlowProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowProjectApp.swift; sourceTree = "<group>"; };
@@ -266,6 +281,11 @@
 		8999451C2EAD9646008F768E /* TypingEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingEffect.swift; sourceTree = "<group>"; };
 		89DE31CA2EA0859A00FA5121 /* ChatbotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatbotView.swift; sourceTree = "<group>"; };
 		89DE31F12EA2F53400FA5121 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		89E3AEA72ED7E467004B8554 /* GlowProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GlowProject.entitlements; sourceTree = "<group>"; };
+		89E3AEA82ED80C92004B8554 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationsView.swift; path = GlowProject/NotificationsView.swift; sourceTree = "<group>"; };
+		89E3AED72EDAEA08004B8554 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeedViewModel.swift; path = GlowProject/FeedViewModel.swift; sourceTree = "<group>"; };
+		89E3AED92EDAEAD2004B8554 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CachedAsyncImage.swift; path = ../PhiaIntro/PhiaIntro/CachedAsyncImage.swift; sourceTree = "<group>"; };
+		89E3AEDB2EDAEAEC004B8554 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = GlowProject/ImageCache.swift; sourceTree = "<group>"; };
 		89F2F38F2EC7F9EF00831AB3 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		89F2F3912EC98C2700831AB3 /* LibreBodoni-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBodoni-Bold.ttf"; sourceTree = "<group>"; };
 		89F2F3922EC98C2700831AB3 /* LibreBodoni-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBodoni-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -281,6 +301,10 @@
 		89F2F39D2EC98C2700831AB3 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		89F2F3AB2EC98CCA00831AB3 /* Vogue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vogue.swift; sourceTree = "<group>"; };
 		89F2F3AD2ECA600D00831AB3 /* PendingRequestPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingRequestPage.swift; sourceTree = "<group>"; };
+		89F71D602ED66B7F00F97A29 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserProfileView.swift; path = GlowProject/UserProfileView.swift; sourceTree = "<group>"; };
+		89F71D622ED66B8F00F97A29 /* PostLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostLayoutView.swift; path = GlowProject/PostLayoutView.swift; sourceTree = "<group>"; };
+		89F71D642ED66B9E00F97A29 /* PostCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostCacheManager.swift; path = GlowProject/PostCacheManager.swift; sourceTree = "<group>"; };
+		89F71D662ED7C38D00F97A29 /* PrivateProfileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateProfileHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +312,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				892CCF852ED43BEC000A06B7 /* FirebaseAnalytics in Frameworks */,
+				892CCF892ED43BEC000A06B7 /* FirebaseStorage in Frameworks */,
+				892CCF872ED43BEC000A06B7 /* FirebaseAuth in Frameworks */,
 				8958FA852E95CDD400973662 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,14 +329,6 @@
 			);
 			name = League_Script;
 			path = "DM_Sans,League_Script/League_Script";
-			sourceTree = "<group>";
-		};
-		892032D02EC5720B00A1BFCE /* DarkVibe */ = {
-			isa = PBXGroup;
-			children = (
-				892032D12EC5736100A1BFCE /* Black.swift */,
-			);
-			path = DarkVibe;
 			sourceTree = "<group>";
 		};
 		892CCF6E2ED101DF000A06B7 /* VogueProfiles */ = {
@@ -327,10 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				892CCF6E2ED101DF000A06B7 /* VogueProfiles */,
-				892032D02EC5720B00A1BFCE /* DarkVibe */,
 				897D75572EC53BD3001FF8F8 /* Girly */,
-				897D75532EBCA01A001FF8F8 /* BlackView.swift */,
-				89365DA02EADF8D600D79D18 /* CareFree.swift */,
 			);
 			path = ProfilePages;
 			sourceTree = "<group>";
@@ -338,6 +354,17 @@
 		8958F9CC2E9203E600973662 = {
 			isa = PBXGroup;
 			children = (
+				89E3AEDB2EDAEAEC004B8554 /* ImageCache.swift */,
+				89E3AED92EDAEAD2004B8554 /* CachedAsyncImage.swift */,
+				89E3AED72EDAEA08004B8554 /* FeedViewModel.swift */,
+				89E3AEA82ED80C92004B8554 /* NotificationsView.swift */,
+				89F71D662ED7C38D00F97A29 /* PrivateProfileHandler.swift */,
+				89F71D642ED66B9E00F97A29 /* PostCacheManager.swift */,
+				89F71D622ED66B8F00F97A29 /* PostLayoutView.swift */,
+				89F71D602ED66B7F00F97A29 /* UserProfileView.swift */,
+				892CCF8A2ED4494E000A06B7 /* ImageUploader.swift */,
+				892CCF812ED43916000A06B7 /* GoogleService-Info.plist */,
+				892CCF7F2ED41628000A06B7 /* PostCreationView.swift */,
 				892CCF7D2ED29741000A06B7 /* FeedView.swift */,
 				892CCF7B2ED296F6000A06B7 /* MainTabView.swift */,
 				892CCF752ED291EC000A06B7 /* VogueWelcome.swift */,
@@ -374,6 +401,7 @@
 		8958F9D72E9203E600973662 /* GlowProject */ = {
 			isa = PBXGroup;
 			children = (
+				89E3AEA72ED7E467004B8554 /* GlowProject.entitlements */,
 				89365D9D2EADF7A300D79D18 /* ProfilePages */,
 				899945072EAD6C61008F768E /* Intro */,
 				89DE31EE2EA2EAA400FA5121 /* HapticFeedback */,
@@ -493,8 +521,10 @@
 		897D75572EC53BD3001FF8F8 /* Girly */ = {
 			isa = PBXGroup;
 			children = (
+				897D75532EBCA01A001FF8F8 /* BlackView.swift */,
 				897D75582EC53BE8001FF8F8 /* GirlyBold.swift */,
 				892032C72EC53C4700A1BFCE /* GirlyGirl.swift */,
+				89365DA02EADF8D600D79D18 /* CareFree.swift */,
 			);
 			path = Girly;
 			sourceTree = "<group>";
@@ -570,6 +600,9 @@
 			name = GlowProject;
 			packageProductDependencies = (
 				8958FA842E95CDD400973662 /* Alamofire */,
+				892CCF842ED43BEC000A06B7 /* FirebaseAnalytics */,
+				892CCF862ED43BEC000A06B7 /* FirebaseAuth */,
+				892CCF882ED43BEC000A06B7 /* FirebaseStorage */,
 			);
 			productName = GlowProject;
 			productReference = 8958F9D52E9203E600973662 /* GlowProject.app */;
@@ -601,6 +634,7 @@
 			mainGroup = 8958F9CC2E9203E600973662;
 			packageReferences = (
 				8958FA832E95CDD400973662 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				892CCF832ED43BEC000A06B7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 8958F9D62E9203E600973662 /* Products */;
 			projectDirPath = "";
@@ -693,6 +727,7 @@
 				8958FA7D2E92043400973662 /* DMSans-VariableFont_opsz,wght.ttf in Resources */,
 				8958FA392E92043400973662 /* DMSans_18pt-ExtraBoldItalic.ttf in Resources */,
 				8958FA612E92043400973662 /* DMSans_36pt-Light.ttf in Resources */,
+				892CCF822ED43916000A06B7 /* GoogleService-Info.plist in Resources */,
 				8958FA422E92043400973662 /* DMSans_18pt-SemiBold.ttf in Resources */,
 				8958FA382E92043400973662 /* DMSans_18pt-ExtraBold.ttf in Resources */,
 				89F2F3A62EC98C2700831AB3 /* LibreBodoni-SemiBoldItalic.ttf in Resources */,
@@ -718,6 +753,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89E3AEDC2EDAEAEC004B8554 /* ImageCache.swift in Sources */,
+				89E3AEDA2EDAEAD2004B8554 /* CachedAsyncImage.swift in Sources */,
+				89E3AED82EDAEA08004B8554 /* FeedViewModel.swift in Sources */,
+				89E3AEA92ED80C92004B8554 /* NotificationsView.swift in Sources */,
+				89F71D672ED7C38D00F97A29 /* PrivateProfileHandler.swift in Sources */,
+				89F71D652ED66B9E00F97A29 /* PostCacheManager.swift in Sources */,
+				89F71D632ED66B8F00F97A29 /* PostLayoutView.swift in Sources */,
+				89F71D612ED66B7F00F97A29 /* UserProfileView.swift in Sources */,
+				892CCF8B2ED4494E000A06B7 /* ImageUploader.swift in Sources */,
+				892CCF802ED41628000A06B7 /* PostCreationView.swift in Sources */,
 				892CCF7E2ED29741000A06B7 /* FeedView.swift in Sources */,
 				892CCF7C2ED296F6000A06B7 /* MainTabView.swift in Sources */,
 				892CCF762ED291EC000A06B7 /* VogueWelcome.swift in Sources */,
@@ -743,7 +788,6 @@
 				899945152EAD6C61008F768E /* EighthView.swift in Sources */,
 				89365DA12EADF8D600D79D18 /* CareFree.swift in Sources */,
 				8958F9D92E9203E600973662 /* GlowProjectApp.swift in Sources */,
-				892032D22EC5736100A1BFCE /* Black.swift in Sources */,
 				8999451D2EAD9646008F768E /* TypingEffect.swift in Sources */,
 				899945132EAD6C61008F768E /* SixthView.swift in Sources */,
 				897D75592EC53BE8001FF8F8 /* GirlyBold.swift in Sources */,
@@ -897,14 +941,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GlowProject/GlowProject.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.3;
 				DEVELOPMENT_ASSET_PATHS = "\"GlowProject/Preview Content\"";
 				DEVELOPMENT_TEAM = FRR7RJ635S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GlowProject/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Glow;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -916,9 +963,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.GlowProject;
+				MARKETING_VERSION = 2.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.archita.GlowProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -930,14 +978,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GlowProject/GlowProject.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.3;
 				DEVELOPMENT_ASSET_PATHS = "\"GlowProject/Preview Content\"";
 				DEVELOPMENT_TEAM = FRR7RJ635S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GlowProject/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Glow;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -949,9 +1000,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.GlowProject;
+				MARKETING_VERSION = 2.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.archita.GlowProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -982,6 +1034,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		892CCF832ED43BEC000A06B7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.6.0;
+			};
+		};
 		8958FA832E95CDD400973662 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -993,6 +1053,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		892CCF842ED43BEC000A06B7 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 892CCF832ED43BEC000A06B7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		892CCF862ED43BEC000A06B7 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 892CCF832ED43BEC000A06B7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		892CCF882ED43BEC000A06B7 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 892CCF832ED43BEC000A06B7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		8958FA842E95CDD400973662 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8958FA832E95CDD400973662 /* XCRemoteSwiftPackageReference "Alamofire" */;

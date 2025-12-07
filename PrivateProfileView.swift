@@ -9,16 +9,23 @@ import SwiftUI
 
 struct PrivateProfileView: View {
     let user: SearchUserResult
+    @Binding var navigateBack: Bool
 
     @State private var gender: String = ""
     @State private var navigateToPendingPage = false
     private let hapticManager = HapticManager()
 
+    init(user: SearchUserResult, navigateBack: Binding<Bool> = .constant(false)) {
+        self.user = user
+        self._navigateBack = navigateBack
+    }
+
     var body: some View {
         ZStack {
             if navigateToPendingPage {
                 // Navigate to pending request page
-                PendingRequestPage(user: user, gender: gender)
+                // Pass the main navigateBack binding so back button goes to explore/notifications
+                PendingRequestPage(user: user, gender: gender, navigateBack: $navigateBack)
                     .transition(.opacity)
             } else {
                 mainContent
@@ -77,13 +84,26 @@ struct PrivateProfileView: View {
                 Spacer()
 
                 // Send follow request button (bottom left)
-                HStack {
-                    GlassButton(title: "send follow request") {
-                        sendFollowRequest()
-                    }
-                    .padding(.leading, 30)
+                VStack(spacing: 15) {
+                    HStack {
+                        GlassButton(title: "send follow request") {
+                            sendFollowRequest()
+                        }
+                        .padding(.leading, 30)
 
-                    Spacer()
+                        Spacer()
+                    }
+
+                    // Back button
+                    HStack {
+                        GlassButton(title: "back") {
+                            print("⬅️ Navigating back from private profile")
+                            navigateBack = false
+                        }
+                        .padding(.leading, 30)
+
+                        Spacer()
+                    }
                 }
                 .padding(.bottom, 100)
             }

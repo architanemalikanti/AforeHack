@@ -1,42 +1,45 @@
 import SwiftUI
 
 struct ExploreView: View {
+    @Binding var dismissToVogueWelcome: Bool
+
     @State private var searchQuery = ""
     @State private var searchResults: [SearchUserResult] = []
     @State private var isSearching = false
     @State private var selectedUser: SearchUserResult? = nil
-    @State private var profileResponse: ProfileResponse? = nil
-    @State private var navigateToProfile = false
     @State private var navigateToOtherProfile = false
     @State private var navigateToPrivateProfile = false
     @State private var navigateToPendingRequest = false
     @State private var userGender: String = ""
     private let hapticManager = HapticManager()
 
+    init(dismissToVogueWelcome: Binding<Bool> = .constant(false)) {
+        self._dismissToVogueWelcome = dismissToVogueWelcome
+    }
+
     var body: some View {
         ZStack {
             // Navigation destinations
-            if navigateToProfile {
-                // Own profile
-                GirlyGirlBold()
-                    .transition(.opacity)
-            } else if navigateToOtherProfile, let response = profileResponse {
-                // Someone else's profile (following)
-                ProfileDisplayLogic(profileResponse: response)
+            if navigateToOtherProfile, let user = selectedUser {
+                // Someone else's profile (following) - show their posts
+                UserProfileView(userID: user.user_id)
                     .transition(.opacity)
             } else if navigateToPrivateProfile, let user = selectedUser {
-                // Private/locked profile
-                PrivateProfileView(user: user)
-                    .transition(.opacity)
+                // Private/locked profile - check for profile image first
+                PrivateProfileHandler(
+                    user: user,
+                    viewerID: UserDefaults.standard.string(forKey: "glow_user_id") ?? "",
+                    navigateBack: $navigateToPrivateProfile
+                )
+                .transition(.opacity)
             } else if navigateToPendingRequest, let user = selectedUser {
                 // Pending request
-                PendingRequestPage(user: user, gender: userGender)
+                PendingRequestPage(user: user, gender: userGender, navigateBack: $navigateToPendingRequest)
                     .transition(.opacity)
             } else {
                 mainContent
             }
         }
-        .animation(.easeInOut(duration: 0.5), value: navigateToProfile)
         .animation(.easeInOut(duration: 0.5), value: navigateToOtherProfile)
         .animation(.easeInOut(duration: 0.5), value: navigateToPrivateProfile)
         .animation(.easeInOut(duration: 0.5), value: navigateToPendingRequest)
@@ -44,35 +47,29 @@ struct ExploreView: View {
 
     var mainContent: some View {
         ZStack {
-            // Background gradient
-            LinearGradient(
-                gradient: Gradient(colors: [
-                    Color.orange,
-                    Color.pink
-                ]),
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .ignoresSafeArea()
-            .overlay(
-                Image("GlitterBackground")
-                    .resizable()
-                    .scaledToFill()
-                    .opacity(0.85)
-                    .ignoresSafeArea()
-            )
+            // Black background
+            Color.black
+                .ignoresSafeArea()
+
+            // Glitter overlay
+            Image("GlitterBackground")
+                .resizable()
+                .scaledToFill()
+                .opacity(0.85)
+                .ignoresSafeArea()
 
             VStack(spacing: 0) {
                 Spacer()
 
                 // Title centered
                 Text("find ur friends")
-                    .font(.custom("DMSans-Regular", size: 40))
+                    .font(.custom("DMSans-ExtraLight", size: 40))
                     .foregroundColor(.white)
                     .padding(.bottom, 20)
 
                 // Search bar right under title
                 searchBar
+                    .frame(maxWidth: 400)
                     .padding(.horizontal, 16)
 
                 // Search results right below search bar
@@ -86,6 +83,7 @@ struct ExploreView: View {
                         VStack(spacing: 15) {
                             ForEach(searchResults, id: \.user_id) { user in
                                 userResultCard(user: user)
+                                    .frame(maxWidth: 400)
                             }
                         }
                         .padding(.horizontal, 16)
@@ -100,7 +98,6 @@ struct ExploreView: View {
 
                 Spacer()
             }
-            .padding(.bottom, 80) // Space for tab bar
         }
         .onTapGesture {
             // Dismiss keyboard when tapping anywhere
@@ -231,8 +228,8 @@ struct ExploreView: View {
 
         // Check if tapped user is the logged-in user
         if user.user_id == currentUserID {
-            print("👤 Navigating to own profile")
-            navigateToProfile = true
+            print("👤 Tapped on own profile - switching to Profile tab")
+            NotificationCenter.default.post(name: NSNotification.Name("NavigateToProfile"), object: nil)
             return
         }
 
@@ -249,31 +246,28 @@ struct ExploreView: View {
                     return
                 }
 
-                self.profileResponse = response
+                let isPublic = response.is_public ?? false
 
-                // Debug: Print design info
-                if let design = response.design {
-                    print("🎨 Design found: \(design.design_name)")
-                    print("   Intro: \(design.intro_caption)")
-                    print("   Two captions count: \(design.two_captions.count)")
-                    print("   Eight captions count: \(design.eight_captions.count)")
-                } else {
-                    print("❌ No design in response")
-                }
-
-                switch response.follow_status {
-                case "not_following":
-                    print("🔒 Profile is private")
-                    self.navigateToPrivateProfile = true
-                case "pending":
-                    print("⏳ Follow request pending")
-                    // Fetch gender before navigating
-                    self.fetchGenderAndNavigate(userID: user.user_id)
-                case "following":
-                    print("✅ Following - showing full profile")
+                // Check if profile is public first
+                if isPublic {
+                    print("🌍 Public profile - showing posts")
                     self.navigateToOtherProfile = true
-                default:
-                    print("⚠️ Unknown follow status: \(response.follow_status)")
+                } else {
+                    // Private profile - check follow status
+                    switch response.follow_status {
+                    case "not_following":
+                        print("🔒 Private profile - not following")
+                        self.navigateToPrivateProfile = true
+                    case "pending":
+                        print("⏳ Follow request pending")
+                        // Fetch gender before navigating
+                        self.fetchGenderAndNavigate(userID: user.user_id)
+                    case "following":
+                        print("✅ Following private profile - showing posts")
+                        self.navigateToOtherProfile = true
+                    default:
+                        print("⚠️ Unknown follow status: \(response.follow_status)")
+                    }
                 }
             }
         }
@@ -301,6 +295,7 @@ struct ExploreView: View {
             }
         }
     }
+
 }
 
 #Preview {

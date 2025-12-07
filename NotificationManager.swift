@@ -19,6 +19,10 @@ class NotificationManager {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             if settings.authorizationStatus == .authorized {
                 print("✅ Already authorized for notifications")
+                // IMPORTANT: Still register to ensure we get/refresh the APNS token
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
                 completion(true)
                 return
             } else if settings.authorizationStatus == .denied {
